@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Catalyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+
+  <style>
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      background-color: #0f015e;
+      margin: 0;
+      padding: 0;
+      /* color: #333; */
+    }
+
+    p {
+      color: #fff;
+      word-spacing: 0.04cm;
+    }
+
+    .cont_box {
+      /* max-width: 600px; */
+      /* margin: auto; */
+      /* padding: 20px; */
+      /* background-color: #fff; */
+      /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    }
+
+    .text {
+      font-size: 100px;
+      color: #fff;
+      /* background-color: red; */
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 500;
+      padding-top: 10px;
+      text-align: center;
+      /* margin: auto; */
+    }
+
+    .getstart_btn a {
+      padding: 10px 15px;
+      color: black;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      background-color: #fff;
+      text-decoration: none;
+    }
+
+    .getstart_btn a:hover {
+      background-color: green;
+      color: #fff;
+    }
+
+    /* h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      } */
+
+    .upload_resume {
+      background-color: #fff;
+      margin-top: 150px;
+      padding: 50px;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      color: #0f015e;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="file"] {
+      /* margin-bottom: 20px; */
+      padding: 10px;
+    }
+
+    .upld_btn {
+      padding: 10px;
+      background-color: #0f015e;
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .disp_resume {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* float: right;
+        margin: 0; */
+    }
+
+    .disp_info {
+      color: #0f015e;
+    }
+
+    .resume_cont {
+      flex-basis: 50%;
+      /* 50% width */
+      margin-right: 20px;
+    }
+
+    .extr_info {
+      flex-basis: 50%;
+      margin-left: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* DIPLAYING_SKILLS */
+    .skill-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .skill-box {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .close-icon {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .resume-score {
+      padding: 20px;
+      /* border: 1px solid #ccc; */
+      background-color: #fff;
+      margin-top: 20px;
+    }
+
+    .result {
+      /* padding: 20px; */
+      /* background-color: #f2f2f2; */
+      /* border-radius: 5px; */
+    }
+
+    {% if filename %}
+
+    .result p {
+      color: #0f015e;
+    }
+
+    .impact-sec {
+      height: 280px;
+      width: 100%;
+      /* border: solid 2px #0f015e;
+      border-radius: 8px; */
+      /* background-color: aqua; */
+    }
+
+    .impact-circle {
+      height: 200px;
+      width: 200px;
+      /* background-color: rgb(255, 89, 0); */
+      float: left;
+      margin-left: 15px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      position: relative;
+    }
+    .feedback{
+      /* background-color: red; */
+      justify-content:space-between;
+      /* height: 250px; */
+      overflow: hidden;
+      /* margin-top: 0; */
+    }
+
+    .feedback ul li{
+      color: #0f015e;
+    }
+
+    .impact-messaages{
+      margin-top: 0;
+    }
+
+    .outer {
+      height: 140px;
+      width: 140px;
+      padding: 8.5px;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+    }
+
+    .inner {
+      height: 120px;
+      width: 120px;
+      margin: 8.5px;
+      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        0px 12px 10px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .score_value {
+      font-weight: 600;
+      color: rgb(54, 52, 52);
+      font-size: 30px;
+    }
+
+    circle {
+      fill: none;
+      stroke: url(#GradientColor);
+      stroke-width: 20px;
+      stroke-dasharray: 450;
+      stroke-dashoffset: 450;
+    }
+
+    .impact-circle {
+      animation: anim 2s linear forwards;
+      margin-right: 10px;
+    }
+
+    .brevity-circle {
+      animation: anim-brevity 2s linear forwards;
+      margin-right: 10px;
+    }
+
+    .section-circle {
+      animation: anim-section 2s linear forwards;
+      margin-right: 10px;
+    }
+
+    .total-circle {
+      animation: anim-total 2s linear forwards;
+      margin-right: 10px;
+    }
+    @keyframes anim {
+    100% {
+      stroke-dashoffset: {{ ((100 - impact_score) / 100) * 450 }};
+    }
+  }
+
+  @keyframes anim-brevity {
+    100% {
+      stroke-dashoffset: {{ ((100 - brevity_score) / 100) * 450 }};
+    }
+  }
+
+  @keyframes anim-section {
+    100% {
+      stroke-dashoffset: {{ ((100 - section_score) / 100) * 450 }};
+    }
+  }
+
+  @keyframes anim-total {
+    100% {
+      stroke-dashoffset: {{ ((100 - total_score) / 100) * 450 }};
+    }
+  }
+
+  .sec-heading{
+    color: #0f015e;
+    margin-left: 25px;
+  }
+  .remarks{
+    color: #0f015e;
+  }
+
+    .svg-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #video-container{
+      margin-top: 15px;
+      margin-left: 35px;
+    }
+    hr{
+      color: #0f015e;
+      background-color: #0f015e;
+      height: 1px;
+    }
+    {% endif %}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="landing_page" id="land_page" style="height: 70vh">
+    <h1 class="text center">
+      RESUME CATALYST
+      <span>
+        <p style="text-align: center; font-size: 20px; margin-top: 0">
+          A smart resume analyzer <br />
+          Empowering job seekers to create impactful resumes and stand out
+          in the competitive job market
+        </p>
+      </span>
+    </h1>
+    <div class="getstart_btn" style="
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin-top: 0;
+          ">
+      <a href="#upld_resume">Get Started</a>
+    </div>
+  </div>
+  <div class="upload_resume" id="upld_resume">
+    <h1>Upload Your Resume</h1>
+    <p style="color: #0f015e">
+      This system facilitates the upload of portable document format (PDF)
+      files. It then performs the following functionalities:
+    </p>
+    <ul>
+      <li>Resume Parsing (Information Extraction)</li>
+      <li>Resume Score Prediction</li>
+      <li>Resume Categorization</li>
+      <li>Resume Job Recommendation</li>
+    </ul>
+    <div class="cont_box" style="color: #0f015e">
+      <form action="/pred" method="post" enctype="multipart/form-data">
+        <input type="file" name="resume" accept=".pdf" required />
+        <input type="submit" value="Submit" />
+      </form>
+
+      <div class="container">
+        {% if filename %}
+        <div class="resume_cont">
+          <h2>Uploaded File</h2>
+          <embed class="disp_resume" src="{{ url_for('download_file', filename=filename) }}" type="application/pdf"
+            width="100%" height="600px" />
+          {% endif %}
+        </div>
+
+        <div class="extr_info">
+          {% if message %}
+          <p class="disp_info">{{message}}</p>
+          {% endif %}
+          {% if predicted_category %}
+          <br />
+          <h1 class="disp_info">Extracted Information</h1>
+          <p class="disp_info">
+            <b><strong>Name:</strong></b> {{name}}
+          </p>
+          <p class="disp_info">
+            <b><strong>Phone No:</strong></b> {{phone}}
+          </p>
+          <p class="disp_info">
+            <b><strong>Email:</strong></b> {{email}}
+          </p>
+
+          {% if extracted_skills %}
+          <p class="disp_info"><b><strong>Skills:</strong></b></p>
+          <div class="skill-container">
+            {% for skill in extracted_skills %}
+            <div class="skill-box">
+              <span>{{ skill }}</span>
+              <span class="close-icon" onclick="removeSkill(this)">&times;</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <p class="disp_info">No skills found.........</p>
+          <br />
+          {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if filename %}
+  {% if total_score is not none %}
+
+  <div class="resume-score" style="margin-top: 3px;">
+    <h1 style="color: #0f015e;">Resume Evaluation</h1>
+
+    <div class="result">
+      <div class="impact-sec">
+        <h3 class="sec-heading">Impact Score: {{ impact_score | round(2) }}%</h3>
+        <div class="impact-circle">
+          <div class="outer">
+            <div class="inner">
+              <div id="impact-number" class="score_value">
+                {{ impact_score | round(2) }}%
+              </div>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF" />
+                      <stop offset="100%" stop-color="#9733EE" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="impact-circle" cx="80" cy="80" r="70" stroke-linecap="round"   />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-messages feedback">
+          <h3 class="remarks">Remarks</h3>
+          <ul>
+              {% for message in impact_message %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+      </div>
+      </div>
+      <br>
+      <hr>
+      <!-- <p>Brevity Score: {{ brevity_score }}%</p> -->
+      <div class="impact-sec">
+        <h3 class="sec-heading">Brevity Score: {{ brevity_score | round(2) }}%</h3>
+        <div class="impact-circle">
+          <div class="outer">
+            <div class="inner">
+              <div id="brevity-number" class="score_value">
+                {{ brevity_score | round(2) }}%
+              </div>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF" />
+                      <stop offset="100%" stop-color="#9733EE" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="brevity-circle" cx="80" cy="80" r="70" stroke-linecap="round"   />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brevity-messages feedback">
+          <h3 class="remarks">Remarks</h3>
+          <ul>
+              {% for message in brevity_message %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+      </div>
+      </div>
+      <br>
+      <hr>
+      <!-- <p>Sections Score: {{ section_score }}%</p> -->
+      <div class="impact-sec">
+        <h3 class="sec-heading">Sections Score: {{ section_score | round(2) }}%</h3>
+        <div class="impact-circle">
+          <div class="outer">
+            <div class="inner">
+              <div id="section-number" class="score_value">
+                {{ section_score | round(2) }}%
+              </div>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF" />
+                      <stop offset="100%" stop-color="#9733EE" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="section-circle" cx="80" cy="80" r="70" stroke-linecap="round"   />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-messages feedback">
+          <h3 class="remarks">Remarks</h3>
+          <ul>
+              {% for message in section_messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+      </div>
+      </div>
+      <br>
+      <hr>
+      <!-- <p>Total Score: {{ total_score }}%</p> -->
+      <div class="impact-sec">
+        <h2 class="sec-heading">Total Score: {{ total_score | round(2) }}%</h2>
+        <div class="impact-circle">
+          <div class="outer">
+            <div class="inner">
+              <div id="total-number" class="score_value">
+                {{ total_score | round(2) }}%
+              </div>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF" />
+                      <stop offset="100%" stop-color="#9733EE" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="total-circle" cx="80" cy="80" r="70" stroke-linecap="round"   />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="total-messages feedback">
+          <h3 class="remarks">Overall Feedback</h3>
+          <ul>
+              {% for message in total_message %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+      </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <div class="youtube-video" style="background-color: #fff; height: 450px; width: 100%;">
+      <h1 style="color: #0f015e; margin-left: 35px;padding: 15px 15px 0 0;">Recommended Video</h1>
+      <div class="yt-msg" style="color: #0f015e; margin-left: 35px;">You can refer to this youtube video to improve your resume.</div>
+      <div class="yt-flex">
+        <div id="video-container">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="job-recomendation" style="background-color: #fff; color: #0f015e;padding: 30px 50px 10px 50px; margin-top: 3px; margin-bottom: 0;" >
+    <h1 style="color: #0f015e; ">Job and Skills Recommendation</h1>
+    <p style="color: #0f015e;">Based on our analysis your resume belongs to...</p>
+    <p class="disp_info" style="color: #0f015e">
+      <b><strong>Category:</strong></b> {{predicted_category}}
+    </p>
+    <p style="color: #0f015e;">And most suitable job for you based on our analysis is...</p>
+    <p class="disp_info" style="color: #0f015e">
+      <b><strong>Recommended Job:</strong></b> {{recommended_job}}
+    </p>
+    <p style="color: #0f015e;">To strengthen your candidacy for the recommended {{recommended_job}} role, we recommend focusing on developing the following skills and the below suggested courses can help you develop those skills:</p>
+  </div>
+  
+  {% if result %}
+  <div class="recom-result" style="background-color: #fff;color: #0f015e;padding: 5px 50px 40px 50px;">
+    {{ result | safe }}
+  </div>
+  
+  {% endif %}
+  {% endif %}
+  {% endif %}
+  <div class="footer" style="width: 100%;height: 150px;align-items: center;justify-content: center; color: #fff;text-align: center;">
+    <h2 style="color: #fff; margin-bottom: 0; margin-top: 80px;">Resume Catalyst</h2>
+    <p style="margin-top: 0;">Copyright  &copy; All rights reserved</p>
+  </div>
+
+
+  <script>
+    function removeSkill(element) {
+      var skillBox = element.parentElement;
+      skillBox.style.display = 'none';
+    }
+
+    // console.log("impact score:",{impact_score})
+  </script>
+
+
+    <script>
+        // List of embed HTML code for multiple videos
+        const embedCodes = [
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/Tt08KmFfIYQ?si=FSXjF7j6KMqJZ87H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/7apj4sVvbro?si=gVjntckyjoYffgOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/y3R9e2L8I9E?si=PO8mNl5swVhRitOf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/Hw2nGZtoOhc?si=2cUKltZskY9UM5IK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/5uhmS8nzxM4?si=fIpfgEMjVwbFNKTG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+            // Add more embed codes as needed
+        ];
+
+        // Function to get a random embed code
+        function getRandomEmbedCode() {
+            // Generate a random index
+            const randomIndex = Math.floor(Math.random() * embedCodes.length);
+            // Return the embed code at the random index
+            return embedCodes[randomIndex];
+        }
+
+        // Get a random embed code
+        const randomEmbedCode = getRandomEmbedCode();
+
+        // Append the random embed code to the video container
+        document.getElementById('video-container').innerHTML = randomEmbedCode;
+    </script>
+ <!-- Load the YouTube Iframe API -->
+ <script src="https://www.youtube.com/iframe_api"></script>
+  
+  
+
+</body>
+
+</html>
