@@ -70,7 +70,7 @@ Resume Catalyst is a smart resume analyzer that helps job seekers create impactf
 ### Video recommendation for Resume score Optimization: 
 ![Video recommendation](readme_images/youtube_recoom.png)
 ### Resume Categorization and Job Role Prediction along with Extra Skills and Course Recommendation: 
-![Job and skills](readme_images/job&sill_recom.png)
+![Job and skills](readme_images/job&skill_recom.png)
 
  
 
