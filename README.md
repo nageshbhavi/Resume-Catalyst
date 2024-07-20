@@ -59,11 +59,18 @@ Resume Catalyst is a smart resume analyzer that helps job seekers create impactf
 
 ## Screenshots
 ### Landing page:
+![Landing page](readme_images/landing_page.png)
 ### Uploading the Resume:
+![Upload page](readme_images/upload.png)
 ### Uploaded Resume with Extract Information from NLP Model
+![Resume Info](readme_images/resume_info.png)
 ### Display of Resume Score:
+![Resume Score](readme_images/resume_evaluation1.png)
+![Resume Score](readme_images/resume_score.png)
 ### Video recommendation for Resume score Optimization: 
+![Video recommendation](readme_images/youtube_recoom.png)
 ### Resume Categorization and Job Role Prediction along with Extra Skills and Course Recommendation: 
+![Job and skills](readme_images/job&sill_recom.png)
 
  
 
